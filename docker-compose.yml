@@ -1,0 +1,12 @@
+version: '2'
+services:
+    postgres:
+        image: postgres:9.6-alpine
+        container_name: hardlinkit-postgresql
+        ports:
+          - '5432:5432'
+        volumes:
+          - ./pgdata:/var/lib/postgresql/data
+        environment:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: Dr2eEUSwBX19Y2Lb01KK
