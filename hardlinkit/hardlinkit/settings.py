@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'hardlinkit.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': '127.0.0.1',
+        'PORT': '5433',
+        'USER': 'postgres',
+        'PASSWORD': 'Dr2eEUSwBX19Y2Lb01KK',
+        'NAME': 'hardlinkit',
     }
 }
 
