@@ -10,3 +10,4 @@ services:
         environment:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: Dr2eEUSwBX19Y2Lb01KK
+        restart: always
