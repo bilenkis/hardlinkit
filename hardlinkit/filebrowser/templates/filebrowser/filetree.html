@@ -1,0 +1,23 @@
+<h1>File Tree</h1>
+
+<h2>fileTree</h2>
+<ul>
+{% for file in fileTree %}
+    <li>{{ file }}</li>
+{% endfor %}
+</ul>
+
+<h2>subdirTree</h2>
+<ul>
+{% for dir in subdirTree %}
+    <li>{{ dir }}</li>
+{% endfor %}
+</ul>
+
+<h2>dirnameTree</h2>
+<ul>
+{% for dirname in dirnameTree %}
+    <li>{{ dirname }}</li>
+{% endfor %}
+</ul>
+
