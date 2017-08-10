@@ -2,11 +2,11 @@ version: '2'
 services:
     postgres:
         image: postgres:9.6-alpine
-        container_name: hardlinkit-postgresql
+        container_name: hardlinkit-db
         ports:
           - '5433:5432'
         volumes:
-          - /opt/docker/hardlinkit-postgresql/data:/var/lib/postgresql/data
+          - ~/opt/docker/hardlinkit/pg/data:/var/lib/postgresql/data
         environment:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: Dr2eEUSwBX19Y2Lb01KK
