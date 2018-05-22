@@ -1,13 +1,29 @@
 version: '2'
 services:
-    postgres:
+
+    db:
         image: postgres:9.6-alpine
         container_name: hardlinkit-db
         ports:
-          - '5433:5432'
+          - '5432:5432'
         volumes:
           - ~/opt/docker/hardlinkit/pg/data:/var/lib/postgresql/data
         environment:
-          POSTGRES_USER: postgres
           POSTGRES_PASSWORD: Dr2eEUSwBX19Y2Lb01KK
-        restart: always
+
+    hardlinkit:
+        build:
+          context: .
+        image: hardlinkit:latest
+        container_name: hardlinkit-web
+        ports:
+          - '8080:8080'
+        volumes:
+          - './hardlinkit/:/opt/hardlinkit/'
+          - '~/Music:/data:ro'
+        depends_on:
+          - db
+        environment:
+          COLLECTION: '/data/post'
+#        command: python3 manage.py runserver 0.0.0.0:8000
+

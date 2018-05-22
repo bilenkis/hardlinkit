@@ -1,16 +1,17 @@
+<!--
 <h1>File Tree</h1>
-
-<h2>fileTree</h2>
-<ul>
-{% for file in fileTree %}
-    <li>{{ file }}</li>
-{% endfor %}
-</ul>
 
 <h2>subdirTree</h2>
 <ul>
 {% for dir in subdirTree %}
     <li>{{ dir }}</li>
+{% endfor %}
+</ul>
+
+<h2>fileTree</h2>
+<ul>
+{% for file in fileTree %}
+    <li>{{ file }}</li>
 {% endfor %}
 </ul>
 
@@ -20,4 +21,37 @@
     <li>{{ dirname }}</li>
 {% endfor %}
 </ul>
+//
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rango</title>
+    </head>
 
+    <body>
+<!--
+        <h1>Rango says...hello world!</h1>
+-->
+
+        {% if obj_list_from_db %}
+            <ul>
+                {% for p in obj_list_from_db.distinct_paths %}
+                  {% for d in obj_list_from_db.dirs_from_path(p) %}
+                    <ul>
+                        <h2>{{ d.name }}</h2>
+                          {% for f in obj_list_from_db.files_from_path(p) %}
+                            <li>{{ f.name }}</li>
+                          {% endfor %}
+                    </ul>
+                      {% endfor %}
+                  {% endfor %}
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong>There are no categories present.</strong>
+        {% endif %}
+
+        <a href="/rango/about/">About</a>
+    </body>
+</html>

@@ -78,8 +78,8 @@ WSGI_APPLICATION = 'hardlinkit.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST': '127.0.0.1',
-        'PORT': '5433',
+        'HOST': 'db',
+        'PORT': '5432',
         'USER': 'postgres',
         'PASSWORD': 'Dr2eEUSwBX19Y2Lb01KK',
         'NAME': 'hardlinkit',
@@ -124,3 +124,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
