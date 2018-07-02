@@ -53,6 +53,9 @@ def dirindex(request):
     return render(request, 'filebrowser/filetree.html', context)
 
 
+def start(request):
+  return render(request, 'filebrowser/start.html')
+
 
 #def dirindex(request):
 #
