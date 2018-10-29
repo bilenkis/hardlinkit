@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 #from django.http import HttpResponse
 import os
 
+from django import forms
 from os.path import join
 
 from .models import dirTree
@@ -56,6 +57,11 @@ def dirindex(request):
 def start(request):
   return render(request, 'filebrowser/start.html')
 
+def filebrowser(request):
+  return render(request, 'filebrowser/filebrowser.html')
+
+class NameForm(forms.Form):
+    your_name = forms.CharField(label='Your name', max_length=100)
 
 #def dirindex(request):
 #
