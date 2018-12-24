@@ -56,8 +56,11 @@ def dirindex(request):
 
 
 def start(request):
+    return render(request, 'filebrowser/start.html')
+
+def addpath(request):
     form = NameForm()
-    return render(request, 'filebrowser/start.html', {'form':form})
+    return render(request, 'filebrowser/addpath.html', {'form':form})
 
 def filebrowser(request):
   return render(request, 'filebrowser/filebrowser.html')

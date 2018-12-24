@@ -1,0 +1,29 @@
+{# Load the tag library #}
+{% load bootstrap4 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+    </head>
+    <body>
+{% block content %}
+      <form action="/filebrowser/dirindex">
+						{% csrf_token %}
+						{% bootstrap_form form %}
+            {% buttons %}
+              <button type="submit" class="btn btn-primary">
+                Update Catalog
+              </button>
+            {% endbuttons %}
+      </form>
+{% endblock %}
+    </body>
+</html>
