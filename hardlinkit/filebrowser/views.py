@@ -58,12 +58,18 @@ def dirindex(request):
 def start(request):
     return render(request, 'filebrowser/start.html')
 
-def addpath(request):
-    form = NameForm()
-    return render(request, 'filebrowser/addpath.html', {'form':form})
+def selectedfiles(request):
+    context = {
+        'obj_list_from_db': request.POST,
+    }
+    return render(request, 'filebrowser/selectedfiles.html', context)
 
 def filebrowser(request):
   return render(request, 'filebrowser/filebrowser.html')
+
+def addpath(request):
+    form = NameForm()
+    return render(request, 'filebrowser/addpath.html', {'form':form})
 
 #def dirindex(request):
 #

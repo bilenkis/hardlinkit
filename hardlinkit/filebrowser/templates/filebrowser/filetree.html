@@ -15,7 +15,7 @@
     </head>
     <body>
         {% if obj_list_from_db %}
-            <form action="/dirindex/filebrowser" method="post" class="form" role="form">
+            <form action="/selectedfiles/" method="post" class="form" role="form">
               {% csrf_token %}
               {% for item in obj_list_from_db %}
                 {% if item.parent == 0 %}

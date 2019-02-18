@@ -1,0 +1,23 @@
+{# Load the tag library #}
+{% load bootstrap4 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FileTree</title>
+    </head>
+    <body>
+        {% if obj_list_from_db %}
+        {{ obj_list_from_db }}
+        {% else %}
+            <strong>There are no categories present.</strong>
+        {% endif %}
+    </body>
+</html>
