@@ -25,5 +25,6 @@ services:
           - db
         environment:
           COLLECTION: '/data/post'
+          POSTGRES_PASSWORD: Dr2eEUSwBX19Y2Lb01KK
 #        command: python3 manage.py runserver 0.0.0.0:8000
 
